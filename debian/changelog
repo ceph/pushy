@@ -1,0 +1,5 @@
+python-pushy (0.5.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #693675)  
+
+ -- Martin Loschwitz <madkiss@debian.org>  Mon, 19 Nov 2012 07:37:32 +0000

@@ -1,0 +1,37 @@
+Source: python-pushy
+Section: python
+Priority: optional
+Maintainer: Martin Loschwitz <madkiss@debian.org>
+Build-Depends: debhelper (>= 9.0.0), python-all-dev, python-support
+Standards-Version: 3.9.3
+Homepage: http://packages.python.org/pushy
+XS-Python-Version: >= 2.6
+
+Package: python-pushy
+Architecture: any
+Depends: ${python:Depends}, ${misc:Depends}
+Description: Simple interface for connecting two python interpreters
+ Pushy provides applicaton developers with a simple interface for 
+ connecting two Python interpreters, either on the local host, or 
+ over a network. Once connected, the interpreters may access objects 
+ in each other, as if they were local. Where objects are mutable 
+ (i.e. may change over time), then objects are “proxied”. This means
+ that a local object is created that mirrors the remote object, 
+ and sends all local function/attribute access calls to the remote 
+ object. Special care has been taken to proxy builtin types properly, 
+ so that proxied objects may be passed to Python’s various builtin 
+ functions.
+ .
+ Pushy contains multiple transports for connecting interpreters, as
+ well as a means for users to provide their own transport modules. 
+ Builtin transports are provided for connecting to local interpreters, 
+ and to remote interpreters via SSH, named pipes (using SMB) on 
+ Microsoft Windows, and over plain old TCP/IP sockets (using daemon).
+ .
+ One of the most useful features of Pushy is that it will take care 
+ of starting the target Python interpreter for you, depending on 
+ which transport is selected. Of particular note, the SSH transport 
+ will start a remote Python interpreter and initialise a Pushy 
+ connection, without having Pushy installed on the remote system. 
+ Similarly, the local transport will create a new Python interpreter
+ on the local host.
